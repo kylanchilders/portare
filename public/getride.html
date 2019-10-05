@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Portare - Post a ride</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/creditcard.css">
+  </head>
+  <body style="background-image: url('./images/backdrop.jpg')">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                        Portare
+                    </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign In </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up </a>
+                        </li>
+                    </ul>
+                  </form>
+                </div>
+              </nav>
+
+              <div class="row">
+                <div class="col-3"></div>
+                    <div class="col-6">
+                        <img src="https://maps.googleapis.com/maps/api/staticmap?center=Bellingham,WA&zoom=13&size=1600x1600&maptype=roadmap&markers=color:blue%7Clabel:A%7C48.774060,-122.443467&markers=color:green%7Clabel:B%7C48.719730,-122.511112&markers=color:red%7Clabel:C%7C48.747474,-122.480628&markers=color:purple%7Clabel:D%7C48.776543,-122.485131&key=AIzaSyBv4jgGOMIDI7shQixa6Npc3vXvX_KBc5Y" style="margin-top:5%">
+                    </div>
+                <div class="col-3"></div>   
+            </div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+            <div class="bd-example">
+                <div id="carouselPickupLocations" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselPickupLocations" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselPickupLocations" data-slide-to="1"></li>
+                        <li data-target="#carouselPickupLocations" data-slide-to="2"></li>
+                        <li data-target="#carouselPickupLocations" data-slide-to="3"></li>
+                    </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="height:10%; margin-top:10%">
+                        <img src="https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location=48.774180,-122.445283
+                        &fov=80&heading=70&pitch=0
+                        &key=AIzaSyBv4jgGOMIDI7shQixa6Npc3vXvX_KBc5Y" style="min-height:10%" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Location A: Barkley Village</h5>
+                            <p>2900 Woburn St</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height:10%">
+                        <img src="https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location=48.719730,-122.511112
+                        &fov=80&heading=70&pitch=0
+                        &key=AIzaSyBv4jgGOMIDI7shQixa6Npc3vXvX_KBc5Y" style="min-height:10%; margin-top:10%" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Location B: Fairhaven Station</h5>
+                            <p>401 Harris Ave</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height:10%">
+                        <img src="https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location=48.747474,-122.480628
+                        &fov=80&heading=70&pitch=0
+                        &key=AIzaSyBv4jgGOMIDI7shQixa6Npc3vXvX_KBc5Y" style="min-height:10%; margin-top:10%" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Location C: Bellingham Farmers Market</h5>
+                            <p>1100 Railroad Ave</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height:10%">
+                        <img src="https://maps.googleapis.com/maps/api/streetview?size=1000x1000&location=48.776406,-122.486045
+                        &fov=80&heading=70&pitch=0
+                        &key=AIzaSyBv4jgGOMIDI7shQixa6Npc3vXvX_KBc5Y" style="min-height:10%; margin-top:10%" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Location D: Cornwall Park</h5>
+                            <p>3424 Meridian St</p>
+                        </div>
+                    </div>
+                </div>
+                    <a class="carousel-control-prev" href="#carouselPickupLocations" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselPickupLocations" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+                </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+                  
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="./js/creditcard.js"></script>
+    <script>
+          
+    </script>
+  </body>
+</html>

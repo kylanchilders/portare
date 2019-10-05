@@ -21,4 +21,12 @@ htmlRoutes.get("/driversignin", function(req, res) {
     res.sendFile(path.join(__dirname, "..", "/public","driversignin.html"));
 });
 
+htmlRoutes.get("/postride", function(req, res) {
+    res.sendFile(path.join(__dirname, "..", "/public","postride.html"));
+});
+
+htmlRoutes.get("/getride", function(req, res) {
+    res.sendFile(path.join(__dirname, "..", "/public","getride.html"));
+});
+
 module.exports = htmlRoutes;
