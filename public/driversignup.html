@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Portare - Driver Signup</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/creditcard.css">
+  </head>
+  <body style="background-image: url('./images/backdrop.jpg')">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                        Portare
+                    </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign In </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up </a>
+                        </li>
+                    </ul>
+                  </form>
+                </div>
+              </nav>
+
+    <div class="row">
+            <div class="col-2"></div>
+                <div class="creditCardForm" class="col-8" style="margin-top:5%; height:auto">
+                        <div>
+                            <h1>Account Info</h1>
+                        </div>
+                            <form>
+                                <div class="form-group firstname">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control" id="firstname">
+                                </div>
+                                <div class="form-group lastname">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" class="form-control" id="lasttname">
+                                </div>
+                                <div class="form-group password">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                <div class="form-group email">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group birthday">
+                                    <label for="password">Birthday</label>
+                                    <input type="date" class="form-control" id="birthday">
+                                </div>
+                            </form>
+                            <div class="heading">
+                                <h1>Automobile Info</h1>
+                            </div>
+                            <form>
+                                <div class="form-group carmake">
+                                    <label for="carmake">Car Make</label>
+                                    <input type="text" class="form-control" id="carmake">
+                                </div>
+                                <div class="form-group carmodel">
+                                    <label for="carmodel">Car Model</label>
+                                    <input type="text" class="form-control" id="carmodel">
+                                </div>
+                                <div class="form-group carcolor">
+                                    <label for="carcolor">Car Color</label>
+                                    <input type="text" class="form-control" id="carcolor">
+                                </div>
+                                <div class="form-group licenseplate">
+                                    <label for="licenseplate">License Plate Number</label>
+                                    <input type="text" class="form-control" id="licenseplate">
+                                </div>
+                                <div class="form-group licensenumber">
+                                    <label for="licensenumber">Drivers License Number</label>
+                                    <input type="text" class="form-control" id="licensenumber">
+                                </div>
+                            </form>
+                            <div class="heading">
+                                    <h1>Bank Information</h1>
+                                    <h5>For Accepting Payment</h5>
+                            </div>
+                            <form>
+                                <div class="form-group bankname">
+                                    <label for="bankname">Bank Name</label>
+                                    <input type="text" class="form-control" id="bankname">
+                                </div>
+                                <div class="form-group routingnumber">
+                                    <label for="routingnumber">Routing Number</label>
+                                    <input type="text" class="form-control" id="routingnumber">
+                                </div>
+                                <div class="form-group accountnumber">
+                                    <label for="accountnumber">Account Number</label>
+                                    <input type="text" class="form-control" id="accountnumber">
+                                </div>
+                                <div class="form-group" id="pay-now">
+                                    <button type="submit" class="btn btn-default" id="confirm-purchase">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+            <div class="col-2"></div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="./js/creditcard.js"></script>
+    <script>
+          
+    </script>
+  </body>
+</html>
