@@ -117,7 +117,7 @@
 <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-<form style="background-color:white; margin:20px; padding: 2%">
+<form id="postride" style="background-color:white; margin:20px; padding: 2%">
         <div class="form-group">
             <label for="rideDate">Date</label>
                 <input type="date" class="form-control" id="rideDate">
@@ -131,24 +131,16 @@
                 <input type="time" class="form-control" id="rideReturnTime">
         </div>
         <div class="form-group">
-            <label for="rideReturnTime">Ride Return Time</label>
-                <input type="time" class="form-control" id="rideReturnTime">
-        </div>
-        <div class="dropdown">
-            <label for="departureLocation">Departure Location</label>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="departureLocation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Choose Location
-            </button>
-                <div class="dropdown-menu" aria-labelledby="departureLocation">
-                  <a class="dropdown-item">A</a>
-                  <a class="dropdown-item">B</a>
-                  <a class="dropdown-item">C</a>
-                  <a class="dropdown-item">D</a>
-                </div>
+            <label for="cost">Cost of Ride Per Rider</label>
+                <input type="number" placeholder="0.00" required name="cost" min="0" value="0.00" step="0.01" pattern="^\d+(?:\.\d{1,2})?$" id="cost">
         </div>
         <div class="form-group">
-            <label for="Trail">Trail Name</label>
-                <input type="text" class="form-control" id="Trail">
+            <label for="departureLocation">Departure Location</label>
+                <input type="text" class="form-control" id="departureLocation" placeholder="A, B, C, or D">
+        </div>
+        <div class="form-group">
+            <label for="trail">Trail Name</label>
+                <input type="text" class="form-control" id="trail">
         </div>
         <div class="form-group">
             <label for="numberOfRiders">Ride Slots Available</label>
@@ -163,13 +155,11 @@
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./js/jquery.payform.min.js" charset="utf-8"></script>
-    <script src="./js/creditcard.js"></script>
-    <script>
-          
-    </script>
+    <!-- <script src="./js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="./js/creditcard.js"></script> -->
+    <script src="./js/postride.js"></script>
   </body>
 </html>
