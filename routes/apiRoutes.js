@@ -4,6 +4,7 @@ var apiRoutes = require('express').Router();
 var moment = require("moment");
 moment().format();
 var now = moment();
+var { Op } = require('sequelize')
 
 
     // Using the passport.authenticate middleware with our local strategy.
@@ -13,7 +14,7 @@ var now = moment();
       // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
       // So we're sending the user back the route to the members page because the redirect will happen on the front end
       // They won't get this or even be able to access this page if they aren't authed
-      res.json("/members");
+      res.json("/getride");
     });
 
 apiRoutes.post("/signup", function(req, res) {
@@ -55,16 +56,32 @@ apiRoutes.post("/postride", function(req, res) {
   });
 })
 
+apiRoutes.put("/signuprider", function(req, res){
+  db.driver_posted_rides.update(
+    {slots_available: req.body.reserved_slots},
+    {where: {
+      id: req.body.id
+    }}
+  )
+})
+
+apiRoutes.post("/user_rides_taken", function(req, res) {
+  db.user_rides_takens.create({
+    user_posted_rides_id: req.body.id,
+    users_id: req.body.users_id
+  })
+})
+
 apiRoutes.get("/getride", function(req, res) {
   console.log(req.body);
   db.driver_posted_rides.findAll({
     where: {
       date: {
-        $gte: now
+        [Op.gte]: now
       }
     }
-  }).then(function() {
-    res.redirect(307, "/getride");
+  }).then(function(db_driver_posted_rides) {
+    res.json(db_driver_posted_rides);
   }).catch(function(err) {
     console.log(err);
     res.json(err);
