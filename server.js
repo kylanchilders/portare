@@ -7,6 +7,7 @@ var apiRoutes = require("./routes/apiRoutes.js");
 var htmlRoutes = require("./routes/htmlRoutes.js");
 var passport = require("./config/passport");
 var db = require("./models")
+
 // Sets up the Express App
 // =============================================================
 var app = express();
