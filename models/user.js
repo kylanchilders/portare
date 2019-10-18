@@ -20,7 +20,22 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    vehicle_make: {
+      type: DataTypes.STRING,
+    },
+    vehicle_model: {
+      type: DataTypes.STRING,
+    },
+    vehicle_color: {
+      type: DataTypes.STRING,
+    },
+    license_plate: {
+      type: DataTypes.STRING,
+    },
+    license_number: {
+      type: DataTypes.STRING,
+    },
   });
   
   // Creating a custom method for our User model. 
