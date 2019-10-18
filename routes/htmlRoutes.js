@@ -30,10 +30,6 @@ htmlRoutes.get("/signin", function(req, res) {
     res.sendFile(path.join(__dirname, "..", "/public","signin.html"));
 });
 
-htmlRoutes.get("/driversignin", function(req, res) {
-    res.sendFile(path.join(__dirname, "..", "/public","driversignin.html"));
-});
-
 htmlRoutes.get("/postride", function(req, res) {
     res.sendFile(path.join(__dirname, "..", "/public","postride.html"));
 });

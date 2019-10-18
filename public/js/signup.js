@@ -29,7 +29,7 @@ $(document).ready(function() {
         password: password
       }).then(function() {
         res.redirect(307, "/api/signin")
-        window.location.replace("/getride.html")
+        window.location.replace("/myaccount.html")
       }).catch(handleLoginErr);
     }
   

@@ -28,7 +28,7 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function() {
-      window.location.replace("/getride.html");
+      window.location.replace("/myaccount.html");
       
       // If there's an error, log the error
     }).catch(function(err) {
