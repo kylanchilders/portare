@@ -38,5 +38,9 @@ htmlRoutes.get("/postride", function(req, res) {
     res.sendFile(path.join(__dirname, "..", "/public","postride.html"));
 });
 
+htmlRoutes.get("/myaccount", function(req, res) {
+    res.sendFile(path.join(__dirname, "..", "/public","myaccount.html"));
+});
+
 
 module.exports = htmlRoutes;
