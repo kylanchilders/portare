@@ -67,9 +67,15 @@ apiRoutes.put("/signuprider", function(req, res){
 
 apiRoutes.post("/user_rides_taken", function(req, res) {
   db.user_rides_takens.create({
-    user_posted_rides_id: req.body.id,
+    driver_posted_rides_id: req.body.driver_posted_rides_id,
     users_id: req.body.users_id
-  })
+  }).then(function() {
+    res.redirect(307, "/user_rides_taken");
+  }).catch(function(err) {
+    console.log(err);
+    res.json(err);
+    // res.status(422).json(err.errors[0].message);
+  });
 })
 
 apiRoutes.get("/getride", function(req, res) {

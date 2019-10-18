@@ -27,9 +27,9 @@ $(document).ready(function() {
       $.post("/api/signup", {
         email: email,
         password: password
-      }).then(function(data) {
-        window.location.replace(data);
-        // If there's an error, handle it by throwing up a boostrap alert
+      }).then(function() {
+        res.redirect(307, "/api/signin")
+        window.location.replace("/getride.html")
       }).catch(handleLoginErr);
     }
   

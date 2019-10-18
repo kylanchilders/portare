@@ -27,8 +27,8 @@ $(document).ready(function() {
     $.post("/api/signin", {
       email: email,
       password: password
-    }).then(function(data) {
-      window.location.replace(data);
+    }).then(function() {
+      window.location.replace("/getride.html");
       
       // If there's an error, log the error
     }).catch(function(err) {

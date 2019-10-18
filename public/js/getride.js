@@ -36,15 +36,26 @@ $(document).ready(function() {
             newRideCard.append("<p>Dropoff Time: "+dropoffTime+"</p>");
             newRideCard.append("<p id='#slots"+i+"'>Rider Slots Available: "+slotsAvailable+"</p>");
             newRideCard.append("<p>Cost per rider: "+cost+"</p>");
-            newRideCard.append("<button id='signupbutton' data-ride-id='"+id+"'>Sign Up For Ride</button>");
+            newRideCard.append("<button class='signupbutton' data-ride-id='"+id+"'>Sign Up For Ride</button>");
         }
     }
 
-function signupRide(userID, id){
-    $.post("/api/user_rides_takens", {
-        driver_posted_rides_id: id,
-        users_id: userID
-    }).then(alert("You've signed up for this ride!")).then(decreaseSlots(id, slots));
+$(document).on("click", ".signupbutton", function(){
+    event.preventDefault();
+        var riderData = {
+            driver_posted_rides_id: $(this).attr('data-ride-id'),
+            users_id: userID
+        };
+    signupRide(riderData.driver_posted_rides_id, riderData.users_id);
+})
+    
+
+function signupRide(driver_posted_rides_id, users_id){
+    console.log("console log: " + driver_posted_rides_id)
+    $.post("/api/user_rides_taken", {
+        driver_posted_rides_id: driver_posted_rides_id,
+        users_id: users_id
+    }).then(alert("You've signed up for this ride!"));
 }
 
 function decreaseSlots(id, slots){
@@ -52,12 +63,6 @@ function decreaseSlots(id, slots){
 
     })
 }
-
-$("#signupbutton").click(function(){
-    var id = this.$("data-ride-id")
-    signupRide(userID, id);
-})
-
 
 getRides();
 
