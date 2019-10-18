@@ -95,8 +95,18 @@ apiRoutes.get("/getride", function(req, res) {
   });
 })
 
-apiRoutes.get("/driversignup", function(req, res) {
-    
+apiRoutes.put("/driversignup", function(req, res) {
+    db.User.update({
+      vehicle_make: req.body.vehicle_make,
+      vehicle_model: req.body.vehicle_model,
+      vehicle_color: req.body.vehicle_color,
+      license_plate: req.body.license_plate,
+      license_number: req.body.license_number
+    }, {
+      where: {
+        id: req.body.id
+      }
+    })
 });
 
 
