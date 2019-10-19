@@ -96,6 +96,21 @@ apiRoutes.get("/getride", function(req, res) {
   });
 })
 
+apiRoutes.get("/getride2", function(req, res) {
+  console.log(req.body);
+  db.driver_posted_rides.findAll({
+    where: {
+      UserId: 2
+    }
+  }).then(function(db_driver_posted_rides) {
+    res.json(db_driver_posted_rides);
+  }).catch(function(err) {
+    console.log(err);
+    res.json(err);
+    // res.status(422).json(err.errors[0].message);
+  });
+})
+
 apiRoutes.get("/getuserid", function(req, res) {
     db.User.findOne({
       where: {email: req.body.email}
