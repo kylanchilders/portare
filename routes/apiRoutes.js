@@ -68,8 +68,8 @@ apiRoutes.put("/signuprider", function(req, res){
 
 apiRoutes.post("/user_rides_taken", function(req, res) {
   db.user_rides_takens.create({
-    driverPostedRideId: req.body.driver_posted_rides_id,
-    UserId: req.body.users_id
+    driverPostedRideId: req.body.driverPostedRideId,
+    UserId: req.body.UserId
   }).then(function() {
     res.redirect(307, "/user_rides_taken");
   }).catch(function(err) {

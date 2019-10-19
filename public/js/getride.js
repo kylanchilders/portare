@@ -43,18 +43,18 @@ $(document).ready(function() {
 $(document).on("click", ".signupbutton", function(){
     event.preventDefault();
         var riderData = {
-            driver_posted_rides_id: $(this).attr('data-ride-id'),
-            users_id: userID
+            driverPostedRideId: $(this).attr('data-ride-id'),
+            UserId: userID
         };
-    signupRide(riderData.driver_posted_rides_id, riderData.users_id);
+    signupRide(riderData.driverPostedRideId, riderData.UserId);
 })
     
 
-function signupRide(driver_posted_rides_id, users_id){
-    console.log("console log: " + driver_posted_rides_id)
+function signupRide(driverPostedRideId, UserId){
+    console.log("console log: " + driverPostedRideId)
     $.post("/api/user_rides_taken", {
-        driver_posted_rides_id: driver_posted_rides_id,
-        users_id: users_id
+        driverPostedRideId: driverPostedRideId,
+        UserId: UserId
     }).then(alert("You've signed up for this ride!"));
 }
 
