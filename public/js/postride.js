@@ -8,7 +8,7 @@ $(document).ready(function() {
     var departureLocation = $("input#departureLocation");
     var Trail = $("input#trail");
     var numberOfRiders = $("input#numberOfRiders");
-    var drivers_id = 99;
+    var UserId = 1;
   
     
     postride.on("submit", function(event) {
@@ -21,19 +21,19 @@ $(document).ready(function() {
         dropoff_time: rideReturnTime.val().trim(),
         slots_available: numberOfRiders.val().trim(),
         cost: cost.val().trim(),
-        drivers_id: drivers_id
+        UserId: UserId
       };
   
       if (!postRideData.date || !postRideData.pickup_location || !postRideData.trail_name || !postRideData.pickup_time || !postRideData.dropoff_time || !postRideData.slots_available || !postRideData.cost) {
         return;
       }
      
-      postRide(postRideData.date, postRideData.pickup_location, postRideData.trail_name, postRideData.pickup_time, postRideData.dropoff_time, postRideData.slots_available, postRideData.cost, postRideData.drivers_id)
+      postRide(postRideData.date, postRideData.pickup_location, postRideData.trail_name, postRideData.pickup_time, postRideData.dropoff_time, postRideData.slots_available, postRideData.cost, postRideData.UserId)
     });
   
     // Does a post to the signup route. If succesful, we are redirected to the members page
     // Otherwise we log any errors
-    function postRide(date, pickup_location, trail_name, pickup_time, dropoff_time, slots_available, cost, drivers_id) {
+    function postRide(date, pickup_location, trail_name, pickup_time, dropoff_time, slots_available, cost, UserId) {
       $.post("/api/postride", {
         date: date,
         pickup_location: pickup_location,
@@ -42,7 +42,7 @@ $(document).ready(function() {
         dropoff_time: dropoff_time,
         slots_available: slots_available,
         cost: cost,
-        drivers_id: drivers_id
+        UserId: UserId
       }).then(function(data) {
         window.location.replace(data);
         // If there's an error, handle it by throwing up a boostrap alert

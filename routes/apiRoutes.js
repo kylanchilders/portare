@@ -47,7 +47,7 @@ apiRoutes.post("/postride", function(req, res) {
     dropoff_time: req.body.dropoff_time,
     slots_available: req.body.slots_available,
     cost: req.body.cost,
-    drivers_id: req.body.drivers_id
+    UserId: req.body.UserId
   }).then(function() {
     res.redirect(307, "/postride");
   }).catch(function(err) {

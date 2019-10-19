@@ -5,7 +5,6 @@ $(document).ready(function() {
     function getUserID(username){
         $.get("/api/getuserid", {
         }).then(function(data){
-            console.log("console log: " + data);
           userID = data.id;
           sessionStorage.setItem("portare_user_id", userID);
         });

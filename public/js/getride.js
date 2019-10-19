@@ -2,7 +2,7 @@ $(document).ready(function() {
     var rideContainer = $("#rideContainer");
     rideContainer.attr('style', "background-color:white");
     var rides;
-    var userID = 99;
+    var userID = 2;
     
     function getRides(){
         $.get("/api/getride", {

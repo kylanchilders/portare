@@ -23,6 +23,11 @@ $(document).ready(function() {
         signUpVehicle(vehicleData.vehicle_make, vehicleData.vehicle_model, vehicleData.vehicle_color, vehicleData.license_plate, vehicleData.license_number);
     });
 
+    $.ajax({ url: '/api/driversignup', method: 'PUT', data:likes})
+            .then(function() {
+                some code...
+            });
+
     function signUpVehicle(vehicle_make, vehicle_model, vehicle_color, license_plate, license_number){
         $.put("/api/driversignup", {
             vehicle_make: vehicle_make,
