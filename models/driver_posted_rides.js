@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
     var driver_posted_rides = sequelize.define("driver_posted_rides", {
-        drivers_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
         pickup_location: {
             type: DataTypes.STRING,
             allowNull: false
@@ -33,5 +29,18 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         }
     })
+
+    driver_posted_rides.associate = function(models){
+        driver_posted_rides.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+
+        driver_posted_rides.hasMany(models.user_rides_takens, {
+            onDelete: "cascade"
+          })
+    }
+
     return driver_posted_rides;
 }

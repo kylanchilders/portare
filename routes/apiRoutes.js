@@ -23,6 +23,7 @@ apiRoutes.post("/signup", function(req, res) {
       email: req.body.email,
       password: req.body.password
     }).then(function() {
+
       res.redirect(307, "/signin");
     }).catch(function(err) {
       console.log(err);
@@ -67,8 +68,8 @@ apiRoutes.put("/signuprider", function(req, res){
 
 apiRoutes.post("/user_rides_taken", function(req, res) {
   db.user_rides_takens.create({
-    driver_posted_rides_id: req.body.driver_posted_rides_id,
-    users_id: req.body.users_id
+    driverPostedRideId: req.body.driver_posted_rides_id,
+    UserId: req.body.users_id
   }).then(function() {
     res.redirect(307, "/user_rides_taken");
   }).catch(function(err) {
@@ -95,6 +96,15 @@ apiRoutes.get("/getride", function(req, res) {
   });
 })
 
+apiRoutes.get("/getuserid", function(req, res) {
+    db.User.findOne({
+      where: {email: req.body.email}
+    }).then(function(db_User){
+      res.json(db_User);
+      console.log(db_User);
+    })
+})
+
 apiRoutes.put("/driversignup", function(req, res) {
     db.User.update({
       vehicle_make: req.body.vehicle_make,
@@ -108,6 +118,12 @@ apiRoutes.put("/driversignup", function(req, res) {
       }
     })
 });
+
+apiRoutes.get("/myridestaken", function(req, res) {
+  db.user_rides_takens.findAll({
+    
+  })
+})
 
 
 

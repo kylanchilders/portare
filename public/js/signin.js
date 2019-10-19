@@ -24,10 +24,16 @@ $(document).ready(function() {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
+    sessionStorage.setItem("portare_username", email);
     $.post("/api/signin", {
       email: email,
       password: password
     }).then(function() {
+      $.get("/api/getuserid", {
+      }).then(function(data){
+        userID = data.id;
+        sessionStorage.setItem("portare_user_id", userID);
+      });
       window.location.replace("/myaccount.html");
       
       // If there's an error, log the error
@@ -35,6 +41,8 @@ $(document).ready(function() {
       console.log(err);
     });
   }
+
+
 
 });
 

@@ -37,6 +37,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
   });
+
+  User.associate = function(models) {
+    User.hasMany(models.driver_posted_rides, {
+      onDelete: "cascade"
+    })
+
+    User.hasMany(models.user_rides_takens, {
+      onDelete: "cascade"
+    })
+  }
+
   
   // Creating a custom method for our User model. 
   //This will check if an unhashed password entered by the 

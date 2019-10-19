@@ -28,6 +28,7 @@ $(document).ready(function() {
         email: email,
         password: password
       }).then(function() {
+        alert("Success! Please go to sign in page to log in!")
         res.redirect(307, "/api/signin")
         window.location.replace("/myaccount.html")
       }).catch(handleLoginErr);
